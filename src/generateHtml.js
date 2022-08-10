@@ -1,4 +1,7 @@
 const generatePage = (newTeam) => {
+
+    const team = [];
+    team.push(newTeam);
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -20,7 +23,14 @@ const generatePage = (newTeam) => {
 
     <body>
 <div>
-<p> i am where the team cards go! </p>
+<div class="card" style="width: 10rem;">
+<div class="card-body">
+<h2 class="card-title">${manager.getName()}</h2>
+<p class="card-text>
+<ul>
+<li> ${manager.getId()}</li>
+<li <a href="mailto: ${manager.getEmail()}</p>
+<li>${manager.getOfficeNumber()}</li>
 </div>
 
 </body>

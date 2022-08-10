@@ -10,3 +10,9 @@ test("Can set office number Username via constructor arguments", () => {
     const mgmt = new Manager("joe", 1, "email", officeNum);
     expect(mgmt.officeNumber).toBe(officeNum);
 });
+
+test("Can get office number Username via officeNumber function", () => {
+    const officeNum = 2;
+    const mgmt = new Manager("joe", 1, "email", officeNum);
+    expect(mgmt.getOfficeNumber()).toBe(officeNum);
+});
