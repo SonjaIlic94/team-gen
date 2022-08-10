@@ -1,4 +1,4 @@
-const generatePage = (data) => {
+const generatePage = (newTeam) => {
     return `
     <!DOCTYPE html>
     <html lang="en">
