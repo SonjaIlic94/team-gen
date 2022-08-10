@@ -60,7 +60,6 @@ function managerPrompt() {
                 if (managerOfficeInput) {
                     return true;
                 } else {
-                    console.log('Please enter an office number for the Manager.');
                     return false;
                 }
             }
@@ -68,7 +67,6 @@ function managerPrompt() {
     ]).then(response => {
         const managerInstance = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOffice);
         newTeam.push(managerInstance);
-        console.log(newTeam);
         addMember();
     });
 };
