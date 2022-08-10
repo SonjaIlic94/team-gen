@@ -65,6 +65,7 @@ function managerPrompt() {
     ]).then(response => {
         const managerInstance = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOffice);
         newTeam.push(managerInstance);
+        console.log(newTeam);
         addMember();
     });
 };
@@ -217,7 +218,7 @@ function addMember() {
 
 // TODO: Create a function to write html file
 function writeToFile() {
-    fs.writeFileSync('./disc/index.html', generatePage(newTeam), function (err, file) {
+    fs.writeFileSync('./dist/index.html', generatePage(newTeam), function (err, file) {
         if (err) throw err;
         console.log('html done!');
     });
