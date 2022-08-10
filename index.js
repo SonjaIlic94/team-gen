@@ -1,13 +1,16 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+
 // class requried are employee, manager, engineer, intern
 const Engineer = require("./lib/Engineer");
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const generatePage = require('./src/generateHtml');
 
+//where it will get stored
 const newTeam = [];
 
+// prompt user for manager info
 function managerPrompt() {
     inquirer.prompt([
         {
@@ -133,6 +136,7 @@ function engineerPrompt() {
     })
 };
 
+//Prompt for intern info
 function internPrompt() {
     inquirer.prompt([
         {
@@ -224,5 +228,6 @@ function writeToFile() {
     });
 }
 
+//init 
 managerPrompt();
 

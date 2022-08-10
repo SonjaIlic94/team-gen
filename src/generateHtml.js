@@ -2,7 +2,7 @@
 module.exports = generatePage = (employee) => {
 
     const team = [];
-    // team.push(Manager);
+    // run through array seeking manager
     for (let i = 0; i < employee.length; i++) {
         if (employee[i].getRole() === "Manager") {
             team.push(` 
@@ -17,14 +17,15 @@ module.exports = generatePage = (employee) => {
                 crossorigin="anonymous">
             <link rel="stylesheet" href="./assets/style.css">
             <!--This is the banner-->
-            <div class="jumbotron jumbotron-fluid">
+            <div class="jumbotron jumbotron-fluid bg-info text-center">
                 <div class="container">
                     <h1 class="display-4">My Team</h1>
                 </div>
             </div>
-            <div class="card" style="width: 10rem;">
+            <div class="card d-inline-block" style="width: 10rem;">
                 <div class="card-body">         
-                    <h5 class="card-title">${employee[i].getName()}</h5>
+                    <h3 class="card-title">${employee[i].getName()}</h3>
+                    <h4>Manager</h4>
                     <p class="card-text">
                     <ul>
                     <li class="employee-id">ID: ${employee[i].getId()} </li>
@@ -36,11 +37,13 @@ module.exports = generatePage = (employee) => {
         </HTML>
         `)
         }
+        //run through array seeking engineer
         else if (employee[i].getRole() === "Engineer") {
             team.push(` 
-            <div class="card" style="width: 10rem;">
+            <div class="card d-inline-block" style="width: 10rem;">
                 <div class="card-body">         
-                    <h5 class="card-title">${employee[i].getName()}</h5>
+                    <h3 class="card-title">${employee[i].getName()}</h3>
+                    <h4>Engineer</h4>
                     <p class="card-text">
                     <ul>
                     <li class="employee-id">ID: ${employee[i].getId()} </li>
@@ -51,11 +54,14 @@ module.exports = generatePage = (employee) => {
         </div>
         </HTML>
         `)
-        } else if (employee[i].getRole() === "Intern") {
+        }
+        //run thru arry seeking intern
+        else if (employee[i].getRole() === "Intern") {
             team.push(` 
-            <div class="card" style="width: 10rem;">
+            <div class="card d-inline-block" style="width: 10rem;">
                 <div class="card-body">         
-                    <h5 class="card-title">${employee[i].getName()}</h5>
+                    <h3 class="card-title">${employee[i].getName()}</h3>
+                    <h4>Intern</h4>
                     <p class="card-text">
                     <ul>
                     <li class="employee-id">ID: ${employee[i].getId()} </li>
@@ -69,26 +75,4 @@ module.exports = generatePage = (employee) => {
         }
     }
     return team.join("");
-
-
-    //     return `
-
-    //     </head>
-
-    //     <body>
-    //     <div class="card" style="width: 10rem;">
-    //                 <div class="card-body">         
-    //                     <h5 class="card-title">${manager[0].getName()}</h5>
-    //                     <p class="card-text">
-    //                     <ul>
-    //                     <li class="employee-id">ID: ${manager[0].getId()} </li>
-    //                     <li class="employee-email">Email: <a href="mailto:${manager[0].getEmail()}">${manager[0].getEmail()}</a></li>
-    //                     <li class="office"> Office Number: ${manager[0].getOfficeNumber()} </li>
-    //                     </p>
-    //                 </div>
-    //         </div>
-
-    // </body>
-
-    //     `
 };
