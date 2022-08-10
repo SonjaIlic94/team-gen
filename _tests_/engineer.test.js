@@ -11,3 +11,10 @@ test("Can set GitHub Username via constructor arguments", () => {
     expect(eng.gitHub).toBe(gitUser);
 });
 
+test("Can get GitHub Username via getGithub()", () => {
+    const gitUser = "test@github.com";
+    const eng = new Engineer("joe", 1, "email", gitUser);
+    expect(eng.getGithub()).toBe(gitUser);
+});
+
+
