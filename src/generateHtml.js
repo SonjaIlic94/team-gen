@@ -48,7 +48,7 @@ module.exports = generatePage = (employee) => {
                     <ul>
                     <li class="employee-id">ID: ${employee[i].getId()} </li>
                     <li class="employee-email">Email: <a href="mailto:${employee[i].getEmail()}">${employee[i].getEmail()}</a></li>
-                    <li class="git"> GitHub: ${employee[i].getGithub()} </li>
+                    <li class="git">GitHub: <a href="mailto:${employee[i].getGithub()}">${employee[i].getGithub()}</a></li>
                     </p>
                 </div>
         </div>
